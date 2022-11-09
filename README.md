@@ -88,7 +88,7 @@ With the help of behaviours, we can attach extra features and functionalities to
 
 Behaviour can be applied at Service, Operation, Contract or EndPoint level. 
 
-Foe example, `serviceMetadata` behavior to instruct the host to publish the service’s metadata over HTTP-GET or to implement the MEX endpoint.
+Foe example, `serviceMetadata` behavior to instruct the host to publish the serviceâ€™s metadata over HTTP-GET or to implement the MEX endpoint.
 
 ### `bindings` section
 The bindings element contains the specifications for all bindings that can be used by any endpoint defined in any service.
@@ -142,3 +142,15 @@ Configurations in WCF can be managed either through the config file or programat
 ## Creating RestFul service using `WebHttpBinding` binding
 - [WCF - Using WebHttpBinding for REST services](https://weblogs.asp.net/kiyoshi/wcf-using-webhttpbinding-for-rest-services)
 - [How to create RESTFul services](http://wcftutorial.net/How_to_create_RESTful_Service.aspx)
+
+## IIS Hosting vs Self Hosting
+### Number of ServiceHost instances
+With IIS hosting, each `.svc` file creates an instance of ServiceHost. So, you can host multiple WCF services with IIS hosting in a single website.
+```
+<%@ ServiceHost Language="C#" Debug="true" Service="WcfServiceTest.Service1" CodeBehind="Service1.svc.cs" %>
+```
+With Self Hosting, you typically create only one instance of ServiceHost.
+
+### Configurations
+When hosting with IIS, all configuration goes into `Web.Config`, instead when doing self-hosting configurations can be add programtically or can be read from `app.config` file.
+
