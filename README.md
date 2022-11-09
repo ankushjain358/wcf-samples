@@ -9,6 +9,9 @@ Repository structure
 
 Please refer to README file in each folder for more specific instructions.
 
+## WCF structure
+![image](https://user-images.githubusercontent.com/13661966/200828358-b085a7bd-9de0-4657-9c5f-2cd82a1d5281.png)
+
 ## Understanding WCF Basics
 Let's quickly understand WCF basic concepts by creating a WCF service in Visual Studio.
 
